@@ -42,7 +42,7 @@ resource "aws_iam_role" "role" {
       "Condition": {
         "StringLike": {
           "app.terraform.io:aud": "${one(aws_iam_openid_connect_provider.tfc_provider.client_id_list)}",
-          "app.terraform.io:sub": "organization:carlos-demos:workspace:aws-wl-identity-demo:run_phase:*"
+          "app.terraform.io:sub": "organization:cesteban-demos:workspace:aws-wl-identity-demo:run_phase:*"
         }
       }
     }
@@ -78,3 +78,11 @@ resource "aws_iam_role_policy_attachment" "test-attach" {
   policy_arn = aws_iam_policy.policy.arn
 }
 #***************************************************************
+
+output "role_arn" {
+  value = aws_iam_role.role.arn
+}
+
+output "oidc_arn" {
+  value = aws_iam_openid_connect_provider.tfc_provider.arn
+}

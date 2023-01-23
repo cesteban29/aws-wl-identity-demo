@@ -4,6 +4,10 @@ terraform {
       source = "hashicorp/aws"
       version = "4.30.0"
     }
+    environment = {
+      source = "Epp0/environment"
+      version = "~>1.0"
+    }
   }
 }
 
