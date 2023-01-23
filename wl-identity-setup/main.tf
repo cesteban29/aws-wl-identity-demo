@@ -1,7 +1,15 @@
-provider "hcp" {}
+terraform {
+  required_providers {
+    aws = {
+      source = "hashicorp/aws"
+      version = "4.51.0"
+    }
+  }
+}
 
 provider "aws" {
   # Configuration options
+  region = "us-east-1"
 }
 
 #Retrieves the TLS Certificate to allow TFC to be an OIDC provider
@@ -70,28 +78,3 @@ resource "aws_iam_role_policy_attachment" "test-attach" {
   policy_arn = aws_iam_policy.policy.arn
 }
 #***************************************************************
-
-
-data "hcp_packer_iteration" "hashicat" {
-  bucket_name = "hashicat-demo"
-  channel     = "production"
-}
-
-data "hcp_packer_image" "hashicat_image" {
-  bucket_name    = "hashicat-demo"
-  cloud_provider = "aws"
-  iteration_id   = data.hcp_packer_iteration.hashicat.ulid
-  region         = "us-east-1"
-}
-
-#creates hashicat module
-#ami-02c932ab9e2245e47
-#data.hcp_packer_image.hashicat_image.cloud_image_id
-module "hashicat" {
-  source  = "app.terraform.io/cesteban-demos/hashicat/aws"
-  version = "1.9.1"
-  instance_type = var.instance_type
-  region = var.region
-  instance_ami = "ami-02c932ab9e2245e47"
-
-}
