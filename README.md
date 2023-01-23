@@ -1,2 +1,2 @@
-# aws-wl-identity-demo
+# aws-workload-identity-demo
  
