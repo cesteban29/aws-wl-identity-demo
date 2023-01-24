@@ -11,7 +11,7 @@ https://github.com/cesteban29/aws-wl-identity-demo/blob/576122660b44e22dd25679e9
 
 ### Configure a Role and Trust Policy
 
-https://github.com/cesteban29/aws-wl-identity-demo/blob/576122660b44e22dd25679e9c02bec919a19424c/wl-identity-setup/main.tf
+https://github.com/cesteban29/aws-wl-identity-demo/blob/576122660b44e22dd25679e9c02bec919a19424c/wl-identity-setup/main.tf#L27-L80
 
 ### Variable Setup
 
@@ -27,11 +27,11 @@ The following variables need to be created as environment variables within TFC/E
 
 #### Dockerfile
 The Dockerfile used to build the agent code will need to be modified similar to the below to allow for running hooks, and to create a directory for persisting an identity token to.
-https://github.com/cesteban29/aws-wl-identity-demo/blob/576122660b44e22dd25679e9c02bec919a19424c/docker-agent/dockerfile
+https://github.com/cesteban29/aws-wl-identity-demo/blob/576122660b44e22dd25679e9c02bec919a19424c/docker-agent/dockerfile#L1-L13
 
 #### Pre-Plan and Pre-Apply Agent Hooks
 Terraform Cloud Agents support running custom programs, or hooks, during strategic points of a Terraform run. These hooks allow you to extend the functionality of Terraform runs.
-https://github.com/cesteban29/aws-wl-identity-demo/blob/576122660b44e22dd25679e9c02bec919a19424c/docker-agent/hooks/terraform-pre-apply
+https://github.com/cesteban29/aws-wl-identity-demo/blob/576122660b44e22dd25679e9c02bec919a19424c/docker-agent/hooks/terraform-pre-apply#L1-L18
 
 ### Commands
 Command to build new docker agent image with the modifications:
