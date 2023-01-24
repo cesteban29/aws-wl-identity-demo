@@ -29,6 +29,7 @@ resource "aws_iam_role" "role" {
   name = "test-role"
 
   #this policy only allows the OIDC provider to assume the role if the aud (audience) field of the JWT is aws.workload.identity
+  #and if the sub field matches exactly what is below
   assume_role_policy = <<EOF
 {
   "Version": "2012-10-17",
@@ -42,7 +43,7 @@ resource "aws_iam_role" "role" {
       "Condition": {
         "StringLike": {
           "app.terraform.io:aud": "${one(aws_iam_openid_connect_provider.tfc_provider.client_id_list)}",
-          "app.terraform.io:sub": "organization:cesteban-demos:workspace:aws-wl-identity-demo:run_phase:*"
+          "app.terraform.io:sub": "organization:cesteban-demos:project:Default Project:workspace:aws-wl-identity-demo:run_phase:*"
         }
       }
     }
