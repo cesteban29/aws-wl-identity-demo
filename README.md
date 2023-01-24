@@ -44,3 +44,10 @@ Command to run the new docker agent image:
 docker run -e TFC_AGENT_TOKEN -e TFC_AGENT_NAME hashicorp/tfc-agent:tag-name
 ```
 
+## Other Resources
+
+Google Slide Deck: https://docs.google.com/presentation/d/19hYHeWM5j9oVEZtEBg4HUHd0g69MxjzvoQ_cMfi-p3c/edit?usp=sharing
+Workload Identity with Agent Hooks Overview: https://hashicorp.atlassian.net/wiki/spaces/IPL/pages/2355527738/Workload+Identity+with+Agent+Hooks+Overview
+Workload Identity with Agent Hooks on AWS: https://hashicorp.atlassian.net/wiki/spaces/IPL/pages/2356840131/Workload+Identity+with+Agent+Hooks+Using+the+Amazon+Web+Services+AWS+Provider
+
+
