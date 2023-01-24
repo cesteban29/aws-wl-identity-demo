@@ -7,7 +7,7 @@ This repository documents an example for integrating the TFC Workload Identity f
 ### Configure Trust between TFC and the Cloud Platform
 
 The trust is established by:
-https://github.com/cesteban29/aws-wl-identity-demo/blob/576122660b44e22dd25679e9c02bec919a19424c/wl-identity-setup/main.tf
+https://github.com/cesteban29/aws-wl-identity-demo/blob/576122660b44e22dd25679e9c02bec919a19424c/wl-identity-setup/main.tf#L15-L25
 
 ### Configure a Role and Trust Policy
 
