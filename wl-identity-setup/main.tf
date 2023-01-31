@@ -43,7 +43,7 @@ resource "aws_iam_role" "role" {
       "Condition": {
         "StringLike": {
           "app.terraform.io:aud": "${one(aws_iam_openid_connect_provider.tfc_provider.client_id_list)}",
-          "app.terraform.io:sub": "organization:cesteban-demos:project:AWS:workspace:aws-wl-identity-demo:run_phase:*"
+          "app.terraform.io:sub": "organization:${var.tfc_organization_name}:project:${var.tfc_project_name}:workspace:${var.tfc_workspace_name}:run_phase:*"
         }
       }
     }
@@ -84,6 +84,3 @@ output "role_arn" {
   value = aws_iam_role.role.arn
 }
 
-output "oidc_arn" {
-  value = aws_iam_openid_connect_provider.tfc_provider.arn
-}

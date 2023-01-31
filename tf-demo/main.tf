@@ -4,19 +4,11 @@ terraform {
       source = "hashicorp/aws"
       version = "4.30.0"
     }
-    environment = {
-      source = "EppO/environment"
-      version = "1.3.3"
-    }
   }
 }
 
 provider "aws" {
   region = var.region
-}
-
-provider "environment" {
-  # Configuration options
 }
 
 module "hashicat" {
